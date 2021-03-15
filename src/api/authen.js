@@ -12,9 +12,14 @@ export const logout = () => {
   return Api().get("users/logout.json");
 };
 
+export const register = (credential) => {
+  return Api().post("users/register.json", credential);
+};
+
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   login,
   getMe,
   logout,
+  register,
 };

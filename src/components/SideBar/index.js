@@ -3,12 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import CreditCardIcon from "@material-ui/icons/CreditCard";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
-import Storefront from "@material-ui/icons/Storefront";
-import Person from "@material-ui/icons/Person";
-import Dashboard from "@material-ui/icons/Dashboard";
+import Event from "@material-ui/icons/Event";
+import Favorite from "@material-ui/icons/Favorite";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,13 +29,13 @@ const SideBar = () => {
       <List component="nav" aria-label="main mailbox folders">
         <ListItemLink to={"/top"}>
           <ListItemIcon>
-            <Dashboard />
+            <Event />
           </ListItemIcon>
           <ListItemText primary="記念日" />
         </ListItemLink>
         <ListItemLink to={"/dears"}>
           <ListItemIcon>
-            <Storefront />
+            <Favorite />
           </ListItemIcon>
           <ListItemText primary="大切な人" />
         </ListItemLink>

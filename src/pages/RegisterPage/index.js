@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import "./loginPage.scss";
+import "./registerPage.scss";
 import { Button, TextField } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
@@ -9,14 +9,16 @@ import { Link } from "react-router-dom";
 
 import Authen from "../../api/authen";
 
-const LoginPage = (props) => {
+const RegisterPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("");
   const history = useHistory();
-  const login = () => {
-    Authen.login({
+  const register = () => {
+    Authen.register({
       email,
       password,
+      username,
     }).then((res) => {
       setUserProcess(res);
     });
@@ -28,10 +30,19 @@ const LoginPage = (props) => {
     history.push("/top");
   };
   return (
-    <div className="login-page-wrapper">
-      <div className="login-form-box">
-        <h1 className="title">ログイン</h1>
+    <div className="register-page-wrapper">
+      <div className="register-form-box">
+        <h1 className="title">新規登録</h1>
         <div className="form">
+          <div className="text-field-wrapper">
+            <TextField
+              className="text-field"
+              label="username"
+              variant="outlined"
+              value={username}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </div>
           <div className="text-field-wrapper">
             <TextField
               className="text-field"
@@ -52,11 +63,11 @@ const LoginPage = (props) => {
             />
           </div>
           <div className="button-wrapper">
-            <Button className="login-button" onClick={() => login()} size="large" variant="contained" color="primary">
-              ログイン
+            <Button className="register-button" onClick={() => register()} size="large" variant="contained" color="primary">
+              登録
             </Button>
           </div>
-          <Link to="register">新規登録</Link>
+          <Link to="/">ログイン</Link>
         </div>
       </div>
     </div>
@@ -71,4 +82,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(LoginPage);
+export default connect(null, mapDispatchToProps)(RegisterPage);

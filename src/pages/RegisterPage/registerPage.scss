@@ -1,0 +1,32 @@
+.register-page-wrapper {
+  grid-area: "main";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .register-form-box {
+    max-width: 460px;
+    margin: 0 auto;
+    border: 1px solid #d0d1d1;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    .title {
+      text-align: center;
+    }
+    .form {
+      padding: 60px;
+      .text-field-wrapper {
+        margin-bottom: 20px;
+        .text-field {
+          width: 340px;
+        }
+      }
+      .button-wrapper {
+        display: flex;
+        justify-content: center;
+        .register-button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ import './topPage.scss';
 const TopPage = () => {
   return (
     <div className="top-page-wrapper">
-      <h1>TopPage</h1>
+      <h1>記念日</h1>
     </div>
   );
 };
