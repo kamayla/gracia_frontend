@@ -1,0 +1,18 @@
+.app-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    "header-bar"
+    "main" 1fr
+  ;
+}
+
+.app-wrapper-auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    "header-bar header-bar"
+    "side-bar main" 1fr
+    / 1fr 4fr
+  ;
+}

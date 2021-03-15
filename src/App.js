@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import LoginPage from "./pages/LoginPage";
+import TopPage from "./pages/TopPage";
+import DearsPage from "./pages/DearsPage";
+import { Switch, BrowserRouter } from "react-router-dom";
+import GuestRoute from "./router/GuestRoute";
+import PrivateRoute from "./router/PrivateRoute";
+import HeaderBar from "./components/HeaderBar";
+import SideBar from "./components/SideBar";
 
+import { useSelector } from "react-redux";
+import { isAuthSelector } from "./reducers/authen";
+
+import "./App.scss";
 function App() {
+  const isAuth = useSelector(isAuthSelector);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className={isAuth ? "app-wrapper-auth" : "app-wrapper"}>
+        <HeaderBar />
+        {isAuth && <SideBar />}
+        <Switch>
+          <GuestRoute exact path="/" component={LoginPage} />
+          <PrivateRoute exact path="/top" component={TopPage} />
+          <PrivateRoute exact path="/dears" component={DearsPage} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
