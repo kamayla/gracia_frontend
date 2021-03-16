@@ -27,18 +27,19 @@ const SideBar = () => {
   return (
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
-        <ListItemLink to={"/top"}>
-          <ListItemIcon>
-            <Event />
-          </ListItemIcon>
-          <ListItemText primary="記念日" />
-        </ListItemLink>
         <ListItemLink to={"/dears"}>
           <ListItemIcon>
             <Favorite />
           </ListItemIcon>
           <ListItemText primary="大切な人" />
         </ListItemLink>
+        <ListItemLink to={"/anniversaries"}>
+          <ListItemIcon>
+            <Event />
+          </ListItemIcon>
+          <ListItemText primary="記念日" />
+        </ListItemLink>
+        
       </List>
       <Divider />
     </div>

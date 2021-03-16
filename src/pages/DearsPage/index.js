@@ -1,11 +1,21 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useState } from "react";
 import './dearsPage.scss';
+import Typography from "@material-ui/core/Typography";
+import { Button } from "@material-ui/core";
+import AddDearModal from '../../components/AddDearModal';
 
 const DearsPage = () => {
+  const [isOpenAddDearsModal, setIsOpenAddDearsModal] = useState(false);
   return (
     <div className="dears-page-wrapper">
-      <h1>大切な人</h1>
+      <AddDearModal open={isOpenAddDearsModal} changeIsOpen={setIsOpenAddDearsModal} />
+      <Typography variant="h4">
+        大切な人
+      </Typography>
+      <Button className="add-dears-button" onClick={() => setIsOpenAddDearsModal(true)} size="large" variant="contained" color="primary">
+        + 大切な人を追加
+      </Button>
     </div>
   );
 };

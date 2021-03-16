@@ -56,7 +56,9 @@ const LoginPage = (props) => {
               ログイン
             </Button>
           </div>
-          <Link to="register">新規登録</Link>
+          <div className="button-wrapper">
+            <Link to="register">新規登録</Link>
+          </div>
         </div>
       </div>
     </div>

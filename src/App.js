@@ -23,7 +23,7 @@ function App() {
         <Switch>
           <GuestRoute exact path="/" component={LoginPage} />
           <GuestRoute exact path="/register" component={RegisterPage} />
-          <PrivateRoute exact path="/top" component={TopPage} />
+          <PrivateRoute exact path="/anniversaries" component={TopPage} />
           <PrivateRoute exact path="/dears" component={DearsPage} />
         </Switch>
       </div>

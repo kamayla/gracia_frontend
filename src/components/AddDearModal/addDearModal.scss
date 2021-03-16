@@ -1,0 +1,27 @@
+.add-dear-modal-wrapper {
+  .form {
+    padding: 60px;
+
+    .text-field-wrapper {
+      margin-bottom: 20px;
+
+      .text-field {
+        width: 340px;
+      }
+
+      .select-field {
+        width: 340px;
+      }
+    }
+
+    .button-wrapper {
+      display: flex;
+      margin-bottom: 16px;
+      justify-content: center;
+
+      .login-button {
+        width: 100%;
+      }
+    }
+  }
+}
