@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
+  modalTitle: {
+    textAlign: 'center',
+  },
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
@@ -38,7 +41,7 @@ const CustomModal = ({ open, modalTitle, onClose, children }) => {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">{modalTitle}</h2>
+            <h2 id="transition-modal-title" className={classes.modalTitle}>{modalTitle}</h2>
             {children}
           </div>
         </Fade>

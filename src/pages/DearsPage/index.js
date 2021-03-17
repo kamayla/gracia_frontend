@@ -4,7 +4,7 @@ import './dearsPage.scss';
 import Typography from "@material-ui/core/Typography";
 import { Button } from "@material-ui/core";
 import AddDearModal from '../../components/AddDearModal';
-import EditDearModal from '../../components/EditDearModal';
+import DearDetailModal from '../../components/DearDetailModal';
 import DataGridComponent from "../../components/DataGridComponent";
 import { list } from "../../api/dears";
 
@@ -29,7 +29,7 @@ const DearsPage = () => {
   return (
     <div className="dears-page-wrapper">
       <AddDearModal open={isOpenAddDearsModal} changeIsOpen={setIsOpenAddDearsModal} parentReload={dataGridReload} />
-      <EditDearModal dear={selectedDear} open={isOpenEditDearsModal} changeIsOpen={setIsOpenEditDearsModal} parentReload={dataGridReload} />
+      <DearDetailModal dear={selectedDear} open={isOpenEditDearsModal} changeIsOpen={setIsOpenEditDearsModal} parentReload={dataGridReload} />
       <div className="content-header">
         <Typography variant="h4" className="main-title">
           大切な人

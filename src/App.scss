@@ -3,8 +3,7 @@
   display: grid;
   grid-template:
     "header-bar"
-    "main" 1fr
-  ;
+    "main"1fr;
 }
 
 .app-wrapper-auth {
@@ -12,7 +11,5 @@
   display: grid;
   grid-template:
     "header-bar header-bar"
-    "side-bar main" 1fr
-    / 1fr 4fr
-  ;
+    "side-bar main"1fr / 1fr 4fr;
 }

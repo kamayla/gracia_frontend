@@ -44,7 +44,7 @@ const EditDearModal = ({ dear, open, changeIsOpen, parentReload }) => {
     }
   }, [dear]);
   return (
-    <CustomModal open={open} onClose={onClose} modalTitle={"大切な人を更新"}>
+    <CustomModal open={open} onClose={onClose} modalTitle={`${dear.name} さん`}>
       <div className="edit-dear-modal-wrapper">
         <div className="form">
           <div className="text-field-wrapper">
