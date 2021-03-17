@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     gridArea: "header-bar",
   },
+  navbar: {
+    background: '#e6aa5f',
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -49,7 +52,7 @@ const HeaderBar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={classes.navbar} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             TANP 課題

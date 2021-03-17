@@ -25,7 +25,7 @@ const LoginPage = (props) => {
   const setUserProcess = async (res) => {
     await localStorage.setItem("token", res.data.data.token);
     await props.setCurrentUser();
-    history.push("/top");
+    history.push("/dears");
   };
   return (
     <div className="login-page-wrapper">

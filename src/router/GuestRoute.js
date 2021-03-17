@@ -5,7 +5,7 @@ import { isAuthSelector } from "../reducers/authen";
 
 function GuestRoute(props) {
   const isAuth = useSelector(isAuthSelector);
-  return isAuth ? <Redirect to="/top" /> : <Route {...props} />;
+  return isAuth ? <Redirect to="/dears" /> : <Route {...props} />;
 }
 
 export default GuestRoute;

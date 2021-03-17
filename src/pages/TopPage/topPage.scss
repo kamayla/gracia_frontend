@@ -1,5 +1,25 @@
 .top-page-wrapper {
   flex: 1;
   background-color: #F2F2F2;
-  padding: 16px;
+  padding: 24px;
+
+  .content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .main-title {
+      padding: 8px;
+      margin-bottom: 8px;
+      border-left: 6px solid #e6aa5f;
+    }
+  }
+
+  .add-anniversaries-button {
+    background: #e6aa5f;
+  }
+
+  .add-anniversaries-button:hover {
+    background: #d8923d;
+  }
 }

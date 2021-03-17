@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import CustomModal from "../CustomModal";
 import { Button, TextField } from "@material-ui/core";
@@ -7,9 +7,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 
 import DearsApi from "../../api/dears";
-import './addDearModal.scss';
+import './editDearModal.scss';
 
-const AddDearModal = ({ open, changeIsOpen, parentReload }) => {
+const EditDearModal = ({ dear, open, changeIsOpen, parentReload }) => {
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
   const [age, setAge] = useState(null);
@@ -17,20 +17,35 @@ const AddDearModal = ({ open, changeIsOpen, parentReload }) => {
   const onClose = () => {
     changeIsOpen(false);
   };
-  const storeDear = () => {
-    DearsApi.store({
-      name,
-      gender,
-      age,
-      segment,
-    }).then((res) => {
+  const deleteDear = () => {
+    DearsApi.del(dear.id).then((res) => {
+      console.log(res.data);
       parentReload();
       onClose();
     })
   }
+  const editDear = () => {
+    DearsApi.edit({
+      name,
+      gender,
+      age,
+      segment,
+    }, dear.id).then((res) => {
+      parentReload();
+      onClose();
+    })
+  }
+  useEffect(() => {
+    if (dear) {
+      setName(dear.name);
+      setGender(dear.gender);
+      setAge(dear.age);
+      setSegment(dear.segment);
+    }
+  }, [dear]);
   return (
-    <CustomModal open={open} onClose={onClose} modalTitle={"大切な人を追加"}>
-      <div className="add-dear-modal-wrapper">
+    <CustomModal open={open} onClose={onClose} modalTitle={"大切な人を更新"}>
+      <div className="edit-dear-modal-wrapper">
         <div className="form">
           <div className="text-field-wrapper">
             <TextField
@@ -87,7 +102,10 @@ const AddDearModal = ({ open, changeIsOpen, parentReload }) => {
             </Select>
           </div>
           <div className="button-wrapper">
-            <Button className="button positive-button" onClick={() => storeDear()} size="large" variant="contained" color="primary">大切な人を追加</Button>
+            <Button className="button positive-button" onClick={() => editDear()} size="large" variant="contained" color="primary">大切な人を更新</Button>
+          </div>
+          <div className="button-wrapper">
+            <Button className="button" onClick={() => deleteDear()} size="large" variant="contained" color="secondary">大切な人を削除</Button>
           </div>
         </div>
       </div>
@@ -95,9 +113,9 @@ const AddDearModal = ({ open, changeIsOpen, parentReload }) => {
   );
 };
 
-AddDearModal.propTypes = {
+EditDearModal.propTypes = {
   open: PropTypes.bool.isRequired,
   changeIsOpen: PropTypes.func.isRequired,
 };
 
-export default AddDearModal;
+export default EditDearModal;

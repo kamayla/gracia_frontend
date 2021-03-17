@@ -11,12 +11,15 @@ const TopPage = () => {
   return (
     <div className="top-page-wrapper">
       <AddAnniversaryModal open={isOpenCreateAnniversaryModal} changeIsOpen={setIsOpenCreateAnniversaryModal} />
-      <Typography variant="h4">
-        記念日
-      </Typography>
-      <Button className="add-anniversaries-button" onClick={() => setIsOpenCreateAnniversaryModal(true)} size="large" variant="contained" color="primary">
-        + 記念日を追加
-      </Button>
+      <div className="content-header">
+        <Typography variant="h4" className="main-title">
+          記念日
+        </Typography>
+        <Button className="add-anniversaries-button" onClick={() => setIsOpenCreateAnniversaryModal(true)} size="large" variant="contained" color="primary">
+          + 記念日を追加
+        </Button>
+      </div>
+      
     </div>
   );
 };
