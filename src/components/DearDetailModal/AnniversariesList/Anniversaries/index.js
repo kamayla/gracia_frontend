@@ -3,12 +3,12 @@ import Avatar from '@material-ui/core/Avatar';
 import moment from 'moment';
 import './anniversaries.scss';
 
-const Anniversaries = ({ dear }) => {
-  const list = dear.anniversaries.map((value, index) => {
+const Anniversaries = ({ anniversaries }) => {
+  const list = anniversaries.map((value, index) => {
     const date = moment(value.date);
     const now = moment();
     const thisYearAnniversaryDate = moment(new Date(now.year(), date.month(), date.date()));
-    const diff = thisYearAnniversaryDate.diff(now);
+    const diff = now < thisYearAnniversaryDate ? thisYearAnniversaryDate.diff(now) : thisYearAnniversaryDate.add(1, 'years').diff(now);
     const duration = moment.duration(diff);
     const days = Math.floor(duration.asDays());
     return (
@@ -34,7 +34,14 @@ const Anniversaries = ({ dear }) => {
   })
   return (
     <div className="anniversaries-wrapper">
-      {list}
+      {list.length !== 0 ?
+        list :
+        (
+          <div className="no-anniversaries">
+            <h3>まだ記念日がありません</h3>
+          </div>
+        )
+      }
     </div>
   );
 }

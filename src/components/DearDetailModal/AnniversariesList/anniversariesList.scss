@@ -3,5 +3,20 @@
 
   .anniversaries-list {
     width: 340px;
+    margin-bottom: 16px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: center;
+
+    .button {
+      width: 100%;
+    }
+
+    .positive-button {
+      background: #e6aa5f;
+    }
   }
 }

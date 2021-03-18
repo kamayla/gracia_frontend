@@ -8,6 +8,10 @@
       .text-field {
         width: 340px;
       }
+
+      .select-field {
+        width: 340px;
+      }
     }
 
     .button-wrapper {
@@ -15,8 +19,12 @@
       margin-bottom: 16px;
       justify-content: center;
 
-      .login-button {
+      .button {
         width: 100%;
+      }
+
+      .positive-button {
+        background: #e6aa5f;
       }
     }
   }

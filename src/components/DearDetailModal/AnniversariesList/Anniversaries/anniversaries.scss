@@ -1,5 +1,14 @@
 .anniversaries-wrapper {
   color: #635f5a;
+  height: 340px;
+  overflow-y: scroll;
+
+  .no-anniversaries {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   p,
   h3 {
