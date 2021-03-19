@@ -19,6 +19,15 @@
     background-color: #fff;
     border-radius: 8px;
     padding: 16px;
+
+    .empty-content {
+      height: 640px;
+      color: #c5c1c1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .add-anniversaries-button {

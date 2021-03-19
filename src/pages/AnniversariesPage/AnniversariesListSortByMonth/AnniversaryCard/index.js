@@ -4,20 +4,18 @@ import moment from 'moment';
 import './anniversaryCard.scss';
 import { Button } from "@material-ui/core";
 import EditAnniversaryModal from '../../../../components/EditAnniversaryModal';
+import calcLeftDays from '../../../../modules/calcLeftDays';
+import AnniversaryImage from '../../../../components/AnniversaryImage';
 
 const AnniversaryCard = ({ anniversary, parentReload }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const date = moment(anniversary.date);
-  const now = moment();
-  const thisYearAnniversaryDate = moment(new Date(now.year(), date.month(), date.date()));
-  const diff = now < thisYearAnniversaryDate ? thisYearAnniversaryDate.diff(now) : thisYearAnniversaryDate.add(1, 'years').diff(now);
-  const duration = moment.duration(diff);
-  const days = Math.floor(duration.asDays());
+  const days = calcLeftDays(anniversary.date);
   return (
     <div className="anniversary-wrapper">
       <EditAnniversaryModal open={isOpenModal} changeIsOpen={setIsOpenModal} anniversary={anniversary} parentReload={parentReload} />
       <div className="image-area">
-        <Avatar src="https://testimageippei.s3-ap-northeast-1.amazonaws.com/001-birthday.jpg" />
+        <AnniversaryImage kind={anniversary.kind} />
       </div>
       <div className="info-area">
         <div className="content-area">

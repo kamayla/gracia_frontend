@@ -13,7 +13,7 @@ const AnniversariesListSortByMonth = ({ anniversaries, parentReload }) => {
       );
     });
     return (
-      <div>
+      <div className="one-month-wrapper">
         <ConvertMonthToJapanese engMonthString={month} />
         {innerArray}
       </div>

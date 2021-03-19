@@ -37,7 +37,7 @@ const SideBar = () => {
           <ListItemIcon>
             <Event />
           </ListItemIcon>
-          <ListItemText primary="記念日" />
+          <ListItemText primary="記念日一覧" />
         </ListItemLink>
         
       </List>

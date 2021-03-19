@@ -1,0 +1,15 @@
+.loading-screen-wrapper {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1300;
+  background: rgba(0, 0, 0, .4);
+  position: fixed;
+  inset: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen-none {
+  display: none;
+}
