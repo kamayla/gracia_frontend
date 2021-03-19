@@ -1,0 +1,53 @@
+.anniversary-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+
+  p,
+  h3 {
+    margin: 0;
+  }
+
+  .image-area {
+    margin-right: 16px;
+  }
+
+  .info-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .content-area {
+      .card-title {
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .days-area {
+        display: flex;
+        align-items: center;
+
+        .date {
+          margin-right: 8px;
+        }
+
+        .days-wrapper {
+          margin-right: 8px;
+
+          .days {
+            font-weight: 800;
+            color: #e6aa5f;
+          }
+        }
+
+        .kind {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .button-area {}
+  }
+}

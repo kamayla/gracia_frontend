@@ -1,13 +1,27 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
-import './topPage.scss';
+import React, { useState, useEffect } from "react";
+import './anniversariesPage.scss';
 import Typography from "@material-ui/core/Typography";
 import { Button } from "@material-ui/core";
-
 import AddAnniversaryModal from '../../components/AddAnniversaryModal';
+import ConvertMonthToJapanese from './ConvertMonthToJapanese';
+import AnniversariesListSortByMonth from './AnniversariesListSortByMonth';
 
-const TopPage = () => {
+import AnniversariesApi from '../../api/anniversaries'
+
+const AnniversariesPage = () => {
   const [isOpenCreateAnniversaryModal, setIsOpenCreateAnniversaryModal] = useState(false);
+  const [anniversaries, setAnniversaries] = useState([]);
+
+  useEffect(() => {
+    getAnniversaries()
+  }, []);
+
+  const getAnniversaries = () => {
+    AnniversariesApi.listSortByMonth().then((res) => {
+      setAnniversaries(res.data);
+    })
+  }
   return (
     <div className="top-page-wrapper">
       <AddAnniversaryModal open={isOpenCreateAnniversaryModal} changeIsOpen={setIsOpenCreateAnniversaryModal} />
@@ -19,9 +33,12 @@ const TopPage = () => {
           + 記念日を追加
         </Button>
       </div>
+      <div className="content-area">
+        <AnniversariesListSortByMonth anniversaries={anniversaries} parentReload={getAnniversaries} />
+      </div>
       
     </div>
   );
 };
 
-export default TopPage;
+export default AnniversariesPage;

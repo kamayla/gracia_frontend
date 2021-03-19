@@ -29,7 +29,7 @@ const AnniversariesList = ({ dear, changeIsOpen, parentReload }) => {
     <div className="anniversaries-list-wrapper">
       <AddAnniversaryModal open={isOpenAddAnniversaryModal} changeIsOpen={setIsOpenAddAnniversaryModal} dear={dear} parentReload={reloadAnniversaries} />
       <div className="anniversaries-list">
-        <Anniversaries anniversaries={anniversaries} />
+        <Anniversaries anniversaries={anniversaries} parentReload={reloadAnniversaries} />
       </div>
       <div className="button-wrapper">
         <Button
