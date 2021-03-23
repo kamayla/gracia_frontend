@@ -41,10 +41,6 @@ const HeaderBar = () => {
   };
 
   const handleLogout = () => {
-    // logout().then(() => {
-    //   localStorage.removeItem("token");
-    //   window.location.reload();
-    // });
     localStorage.removeItem("token");
     window.location.reload();
     setAnchorEl(null);
@@ -83,7 +79,6 @@ const HeaderBar = () => {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>アカウント</MenuItem>
                 <MenuItem onClick={handleLogout}>ログアウト</MenuItem>
               </Menu>
             </div>
