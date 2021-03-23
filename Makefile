@@ -6,3 +6,8 @@ deploy:
 	export AWS_PROFILE=ecsmaster
 	aws s3 sync ./build s3://tanp-test
 	aws cloudfront create-invalidation --distribution-id E3JEZROEZF1PY1 --paths "/*"
+deploy-pipeline:
+	yarn install
+	yarn build
+	aws s3 sync ./build s3://tanp-test
+	aws cloudfront create-invalidation --distribution-id E3JEZROEZF1PY1 --paths "/*"
