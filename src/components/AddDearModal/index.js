@@ -84,6 +84,23 @@ const AddDearModal = ({ open, changeIsOpen, parentReload }) => {
             >
               <MenuItem value={'彼女'}>彼女</MenuItem>
               <MenuItem value={'彼氏'}>彼氏</MenuItem>
+              <MenuItem value={'女友達'}>女友達</MenuItem>
+              <MenuItem value={'男友達'}>男友達</MenuItem>
+              <MenuItem value={'男性'}>男性</MenuItem>
+              <MenuItem value={'女性'}>女性</MenuItem>
+              <MenuItem value={'夫'}>夫</MenuItem>
+              <MenuItem value={'妻'}>妻</MenuItem>
+              <MenuItem value={'父親'}>父親</MenuItem>
+              <MenuItem value={'母親'}>母親</MenuItem>
+              <MenuItem value={'祖父'}>祖父</MenuItem>
+              <MenuItem value={'祖母'}>祖母</MenuItem>
+              <MenuItem value={'上司'}>上司</MenuItem>
+              <MenuItem value={'先輩'}>先輩</MenuItem>
+              <MenuItem value={'妹'}>妹</MenuItem>
+              <MenuItem value={'弟'}>弟</MenuItem>
+              <MenuItem value={'姉'}>姉</MenuItem>
+              <MenuItem value={'兄'}>兄</MenuItem>
+              <MenuItem value={'赤ちゃん'}>赤ちゃん</MenuItem>
             </Select>
           </div>
           <div className="button-wrapper">
