@@ -51,7 +51,7 @@ const HeaderBar = () => {
       <AppBar className={classes.navbar} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            TANP 課題
+            TANP 課題かーだいだいだい
           </Typography>
           {isAuth && (
             <div>
